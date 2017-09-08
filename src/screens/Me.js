@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {
   View,
+  BackHandler,
   TouchableNativeFeedback,
   Text
 }from 'react-native';
@@ -16,8 +17,35 @@ export default class MeScreen extends Component {
       id: 'message'
     }, {
       icon: require('../assets/images/setting.png'),
-      id: 'message'
+      id: 'setting'
     }]
+  }
+  constructor (props) {
+    super(props)
+    this.props.navigator.setOnNavigatorEvent(this.onNavigatorEvent.bind(this))
+  }
+  componentWillMount () {
+    BackHandler.addEventListener('hardwareBackPress', this.handleBack);
+  }
+  componentWillUnmount () {
+    BackHandler.removeEventListener('hardwareBackPress', this.handleBack);
+  }
+  onNavigatorEvent (event) {
+    if (event.type === 'NavBarButtonPress') {
+      if (event.id == 'message') {
+        this._jump({
+          screen: 'app.MessageScreen',
+          title: '消息',
+          animationType: 'slide-horizontal'
+        })
+      } else {
+        this._jump({
+          screen: 'app.SettingScreen',
+          title: '设置',
+          animationType: 'slide-horizontal'
+        })
+      }
+    }
   }
   _jump (options) {
     this.props.navigator.push({
@@ -33,7 +61,7 @@ export default class MeScreen extends Component {
           onPress={()=>this._jump({screen:'app.LoginScreen',title:'用户登录'})}
         >
           <View>
-            <Text>首页</Text>
+            <Text>登录</Text>
           </View>
         </TouchableNativeFeedback>
       </View>

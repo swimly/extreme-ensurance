@@ -4,7 +4,7 @@ import {
   Text
 }from 'react-native';
 var firstClick = 0;
-export default class MessageScreen extends Component {
+export default class SettingScreen extends Component {
   static navigatorStyle = {
     statusBarTextColorScheme: 'dark',
     tabBarHidden: true,
@@ -26,7 +26,7 @@ export default class MessageScreen extends Component {
   render () {
     return (
       <View>
-        <Text>消息</Text>
+        <Text>设置</Text>
       </View>
     )
   }

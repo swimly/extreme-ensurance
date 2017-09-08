@@ -6,6 +6,7 @@ import CustomerScreen from './Customer';
 import OfferScreen from './Offer';
 import MessageScreen from './Message';
 import LoginScreen from './Login';
+import SettingScreen from './Setting';
 import ShareComponent from '../components/Share';
 import LocationComponent from '../components/Location';
 import MapComponent from '../components/Map';
@@ -21,6 +22,7 @@ export function registerScreens() {
   Navigation.registerComponent('app.location', () => LocationComponent);
   Navigation.registerComponent('app.map', () => MapComponent);
   Navigation.registerComponent('app.LoginScreen', () => LoginScreen);
+  Navigation.registerComponent('app.SettingScreen', () => SettingScreen);
 }
 export function registerScreenVisibilityListener() {
   new ScreenVisibilityListener({
