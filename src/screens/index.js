@@ -5,9 +5,11 @@ import MeScreen from './Me';
 import CustomerScreen from './Customer';
 import OfferScreen from './Offer';
 import MessageScreen from './Message';
+import LoginScreen from './Login';
 import ShareComponent from '../components/Share';
 import LocationComponent from '../components/Location';
 import MapComponent from '../components/Map';
+
 // register all screens of the app (including internal ones)
 export function registerScreens() {
   Navigation.registerComponent('app.HomeScreen', () => HomeScreen);
@@ -18,6 +20,7 @@ export function registerScreens() {
   Navigation.registerComponent('app.share', () => ShareComponent);
   Navigation.registerComponent('app.location', () => LocationComponent);
   Navigation.registerComponent('app.map', () => MapComponent);
+  Navigation.registerComponent('app.LoginScreen', () => LoginScreen);
 }
 export function registerScreenVisibilityListener() {
   new ScreenVisibilityListener({
