@@ -9,8 +9,7 @@ import com.facebook.react.shell.MainReactPackage;
 import com.facebook.soloader.SoLoader;
 
 import com.reactnativenavigation.NavigationApplication;
-import cl.json.RNSharePackage;
-import org.lovebing.reactnative.baidumap.BaiduMapPackage;
+
 
 
 import java.util.Arrays;
@@ -41,8 +40,7 @@ public class MainApplication extends NavigationApplication {
     // No need to add RnnPackage and MainReactPackage
     return Arrays.<ReactPackage>asList(
       // eg. new VectorIconsPackage()
-      new RNSharePackage(),
-      new BaiduMapPackage(getApplicationContext())
+
     );
   }
 

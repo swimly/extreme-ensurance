@@ -10,6 +10,7 @@ import SettingScreen from './Setting';
 import ShareComponent from '../components/Share';
 import LocationComponent from '../components/Location';
 import MapComponent from '../components/Map';
+import CodeModalComponent from '../components/CodeModal';
 
 // register all screens of the app (including internal ones)
 export function registerScreens() {
@@ -23,6 +24,7 @@ export function registerScreens() {
   Navigation.registerComponent('app.map', () => MapComponent);
   Navigation.registerComponent('app.LoginScreen', () => LoginScreen);
   Navigation.registerComponent('app.SettingScreen', () => SettingScreen);
+  Navigation.registerComponent('app.CodeModalComponent', () => CodeModalComponent);
 }
 export function registerScreenVisibilityListener() {
   new ScreenVisibilityListener({
